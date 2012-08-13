@@ -8,4 +8,5 @@ Gem::Specification.new do |s|
   s.email       = 'marvans@gmail.com'
   s.files       = ["lib/scrapevg.rb"]
   s.homepage    = 'http://rubygems.org/gems/scrapevg'
+  s.executables << 'scrapevg'
 end
