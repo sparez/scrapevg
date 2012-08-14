@@ -9,4 +9,5 @@ Gem::Specification.new do |s|
   s.files       = ["lib/scrapevg.rb"]
   s.homepage    = 'http://rubygems.org/gems/scrapevg'
   s.executables << 'scrapevg'
+  s.add_runtime_dependency 'nokogiri', ['>= 1.5.5', '< 2.0']
 end
