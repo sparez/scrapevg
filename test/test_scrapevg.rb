@@ -6,3 +6,5 @@ class ScrapevgTest < Test::Unit::TestCase
     assert_equal 1, 1
   end
 end
+
+require 'scrapevg/test_cli_parser'
