@@ -7,7 +7,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Reza Marvan Spagnolo"]
   s.email       = 'marvans@gmail.com'
   s.files       = [ "lib/scrapevg.rb", "lib/scrapevg/cli_parser.rb", 
-                    "lib/scrapevg/page_scraper.rb", "lib/scrapevg/svg_extractor.rb"]
+                    "lib/scrapevg/page_scraper.rb", "lib/scrapevg/svg_extractor.rb",
+                    "lib/scrapevg/svg_writer.rb" ]
   s.homepage    = 'http://rubygems.org/gems/scrapevg'
   s.executables << 'scrapevg'
   s.add_runtime_dependency 'nokogiri', ['>= 1.5.5', '< 2.0']

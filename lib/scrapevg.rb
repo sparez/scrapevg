@@ -13,11 +13,25 @@ class Scrapevg
     begin
       args = CliParser.parse_args(ARGV)
       page = PageScraper.scrape_url( args[:url] )
+      
       #doc = Nokogiri::HTML( open( args[:url] ) ) # Nokogiri::HTML:Document
       doc = Nokogiri::HTML( page ) # Nokogiri::HTML:Document
-      puts doc
-      # extract the svg elements -- using xpath ?
-      # write the output svg files - we need a target dir for that
+      svg_elements = SvgExtractor.extract_svg(doc)
+      
+      if svg_elements.size > 0
+        puts "Found #{svg_elements.size} SVG elements"
+        puts "Writing the file(s) to the specified target directory: #{args[:target]}"
+        prefix = 'svgfile_'
+        svg_elements.each_with_index do |svg,i|
+          filename = prefix + "%03d" % i + ".svg"
+          target_file = File.expand_path(args[:target]) + '/' + filename
+          SvgWriter.write_svg(svg,target_file)
+        end
+        puts 'Done!'
+      else
+        puts "No SVG elements found in given page #{args[:url]}"
+      end
+
     rescue SocketError
       puts "Failed to fetch given URL: #{args[:url]}"
     rescue ArgumentError => ae
@@ -29,3 +43,5 @@ end
 
 require 'scrapevg/cli_parser'
 require 'scrapevg/page_scraper'
+require 'scrapevg/svg_extractor'
+require 'scrapevg/svg_writer'
