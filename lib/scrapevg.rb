@@ -10,11 +10,11 @@ class Scrapevg
     begin
       args = CliParser.parse_args(ARGV)
       page = PageScraper.scrape_url( args[:url] )
-      svg_elements = SvgExtractor.extract_svg(page)
-      if svg_elements.size > 0
-        puts "Found #{svg_elements.size} SVG elements"
+      svg_scraper = SvgScraper.new(page)
+      if svg_scraper.svg_elements.size > 0
+        puts "Found #{svg_scraper.svg_elements.size} SVG elements"
         puts "Writing the file(s) to the specified target directory: #{args[:target]}"
-        SvgWriter.write_to_files(svg_elements,args[:target])
+        svg_scraper.write_to_directory(args[:target])
         puts 'Done!'
       else
         puts "No SVG elements found in given page #{args[:url]}"
@@ -28,5 +28,4 @@ end
 
 require 'scrapevg/cli_parser'
 require 'scrapevg/page_scraper'
-require 'scrapevg/svg_extractor'
-require 'scrapevg/svg_writer'
+require 'scrapevg/svg_scraper'
