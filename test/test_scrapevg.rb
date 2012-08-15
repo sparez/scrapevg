@@ -8,3 +8,4 @@ class ScrapevgTest < Test::Unit::TestCase
 end
 
 require 'scrapevg/test_cli_parser'
+require 'scrapevg/test_svg_extractor'
