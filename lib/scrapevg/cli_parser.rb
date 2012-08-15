@@ -1,6 +1,6 @@
 # license...
 
-# scrapevg parser for command line arguments
+# parser for command line arguments
 class Scrapevg::CliParser
 
   def self.parse_args(argv)
@@ -8,7 +8,7 @@ class Scrapevg::CliParser
     raise ArgumentError, 'Please input URL to scrape as first argument' unless argv[0]
     raise ArgumentError, 'Please input target directory as second argument' unless argv[1]
 
-    options = {
+    args = {
       :url    => argv[0],
       :target => argv[1],
     }

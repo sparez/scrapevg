@@ -1,14 +1,14 @@
 # license...
 
-class Scrapevg::SvgExtractor
-  # extracts svg elements out of a nokogiri html doc
+require 'nokogiri'
 
-  # return an array of svg elements found in the passed document
-  def self.extract_svg(doc)
+# extracts svg elements out of a web page
+class Scrapevg::SvgExtractor
+  
+  # return an array of svg elements found in the given web page
+  def self.extract_svg(page)
+    doc = Nokogiri::HTML( page ) # Nokogiri::HTML:Document
     svg_elements = doc.xpath('//svg')
-    # todo: could do some cleanup for nested elements in the svg
-    # which are not standard compliant etc.
   end
 
 end
-
