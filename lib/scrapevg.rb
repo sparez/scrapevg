@@ -14,12 +14,7 @@ class Scrapevg
       if svg_elements.size > 0
         puts "Found #{svg_elements.size} SVG elements"
         puts "Writing the file(s) to the specified target directory: #{args[:target]}"
-        prefix = 'svgfile_'
-        svg_elements.each_with_index do |svg,i|
-          filename = prefix + "%03d" % i + ".svg"
-          target_file = File.expand_path(args[:target]) + '/' + filename
-          SvgWriter.write_svg(svg,target_file)
-        end
+        SvgWriter.write_to_files(svg_elements,args[:target])
         puts 'Done!'
       else
         puts "No SVG elements found in given page #{args[:url]}"
