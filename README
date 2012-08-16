@@ -1,0 +1,12 @@
+Scrapevg is a simple tool for scraping SVG images from web pages and save them
+to file.
+It uses PhantomJS for rendering web pages, thus being able to scrape SVG images
+generated client side.
+
+Sample usage:
+
+scrapevg http://www.example.com/page-with-svg-images.html /directory/where/to/save/svg/files
+
+This software is licensed under the MIT License.
+
+Reza Spagnolo 
