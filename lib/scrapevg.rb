@@ -1,11 +1,14 @@
-# license...
+# Scrapevg main class
+# Author:: Reza Marvan Spagnolo
+# License:: see LICENSE
 
-# main Scrapevg driver
-# run it with Scrapevg.run
-
+#
+# Main Scrapevg driver
+# Launch with Scrapevg.run()
+#
 class Scrapevg
 
-  # run scrapevg main logic
+  # Run Scrapevg main logic
   def self.run
     begin
       args = CliParser.parse_args(ARGV)

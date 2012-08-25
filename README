@@ -5,7 +5,7 @@ generated client side.
 
 Sample usage:
 
-scrapevg http://www.example.com/page-with-svg-images.html /directory/where/to/save/svg/files
+$> scrapevg http://www.example.com/page-with-svg-images.html /directory/where/to/save/svg/files
 
 The software is not yet submitted as a gem, so to run it in the meantime please install phantomjs and the gems phantomjs.rb and nokogiri, then type:
 
