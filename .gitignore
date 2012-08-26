@@ -4,3 +4,6 @@
 
 # generated doc folder
 /doc
+
+# rvmrc
+.rvmrc
