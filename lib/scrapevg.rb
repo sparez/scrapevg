@@ -6,7 +6,7 @@
 # Main Scrapevg driver
 # Launch with Scrapevg.run()
 #
-class Scrapevg
+module Scrapevg
 
   # Run Scrapevg main logic
   def self.run

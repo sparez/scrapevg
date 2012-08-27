@@ -7,3 +7,8 @@
 
 # rvmrc
 .rvmrc
+
+# Gemfile.lock - for the moment let's avoid to specify deps with such precision
+# still unsure if it's the way to go as scrapevg is after all an app and possibly 
+# a gem at the same time
+Gemfile.lock

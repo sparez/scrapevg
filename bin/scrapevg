@@ -5,7 +5,6 @@
 # License:: see LICENSE
 # Summary:: Command line utility for scraping svg images out of a web page
 
-
 require 'scrapevg'
 
-Scrapevg.run
+Scrapevg::run
