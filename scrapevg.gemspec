@@ -12,8 +12,8 @@ Gem::Specification.new do |s|
   s.homepage    = 'http://rubygems.org/gems/scrapevg'
 
   s.files       = `git ls-files`.split($\)
-  s.executables   = s.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  s.test_files    = s.files.grep(%r{^(test|spec|features)/})
+  s.executables = s.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+  s.test_files  = s.files.grep(%r{^(test|spec|features)/})
 
   s.add_development_dependency 'rdoc'
   s.add_development_dependency 'aruba'
