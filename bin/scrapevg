@@ -5,6 +5,47 @@
 # License:: see LICENSE
 # Summary:: Command line utility for scraping svg images out of a web page
 
+require 'optparse'
+require 'methadone'
 require 'scrapevg'
 
-Scrapevg::run
+class App
+
+  include Methadone::Main
+  include Methadone::CLILogging
+
+  main do |page_url,target_dir|# Add args you want: |like,so|
+    # your program code here
+    # You can access CLI options via
+    # the options Hash
+    Scrapevg::run(page_url,target_dir)
+  end
+
+  # supplemental methods here
+
+  # Declare command-line interface here
+
+  description "CLI utility for scraping SVG content out of a web page"
+  
+  # Accept flags via:
+  # on("--flag VAL","Some flag")
+  # options[flag] will contain VAL
+  #
+  # Specify switches via:
+  # on("--[no-]switch","Some switch")
+  #
+  # Or, just call OptionParser methods on opts
+  
+  # required arguments
+  arg :page_url,    :required, :one, "HTTP URL of the web page whose SVG content you want to scrape"
+  arg :target_dir,  :required, :one, "Target directory where to write to file the SVG image(s) found"
+  
+  # optional arguments
+  # arg :optional_arg, :optional
+
+  version Scrapevg::VERSION
+
+  use_log_level_option
+
+  go!
+end
