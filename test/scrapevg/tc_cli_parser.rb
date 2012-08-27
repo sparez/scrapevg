@@ -1,8 +1,11 @@
-# license...
+# Tests for CLI Parser
+# Author:: Reza Marvan Spagnolo
+# License:: see LICENSE
 
 require 'test/unit'
+require 'scrapevg'
 
-class Scrapevg::CliParserTest < Test::Unit::TestCase
+class CliParserTest < Test::Unit::TestCase
   def test_parse_args
     test_url = 'http://foo.bar'
     test_target = '/tmp/mysvgfiles'

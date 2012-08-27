@@ -5,12 +5,12 @@
 require 'rake/testtask'
 require 'rdoc/task'
 
-desc "Run tests"
+# unit tests
 Rake::TestTask.new do |t|
-  t.libs << 'test'
+  t.pattern = 'test/**/tc_*.rb'
 end
 
-desc 'Generate API documentation to doc/index.html'
+# rdoc
 Rake::RDocTask.new do |rd|
   rd.rdoc_dir = 'doc/'
   rd.main = 'README'
@@ -21,4 +21,4 @@ Rake::RDocTask.new do |rd|
   rd.options << '--all'
 end
 
-task :default => [:test, :rdoc]
+task :default => [:test]

@@ -1,10 +1,13 @@
-# license...
+# Tests for SVG Scraper
+# Author:: Reza Marvan Spagnolo
+# License:: see LICENSE
 
 require 'test/unit'
+require 'scrapevg'
 
 # test class for Scrapevg::SvgScraper
 
-class Scrapevg::SvgScraperTest < Test::Unit::TestCase
+class SvgScraperTest < Test::Unit::TestCase
 
   def setup
     # test fixtures
